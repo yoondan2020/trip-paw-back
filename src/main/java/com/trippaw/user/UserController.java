@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,8 +21,8 @@ public class UserController {
     }
 
     @GetMapping("/me")
-    public User findByProviderAndProviderId(Principal principal) {
-        User user = userService.findByUsername(principal.getName());
+    public Optional<User> findByProviderAndProviderId(Principal principal) {
+        User user = userService.findByName(principal.getName());
         return userService.findByProviderAndProviderId(user.getProvider(), user.getProviderId());
     }
 }
