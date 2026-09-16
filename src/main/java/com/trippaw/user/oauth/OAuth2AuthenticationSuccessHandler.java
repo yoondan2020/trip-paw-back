@@ -42,6 +42,8 @@ public class OAuth2AuthenticationSuccessHandler implements AuthenticationSuccess
 
         Optional<User> user = userService.findByProviderAndProviderId(provider, providerId);
 
+        System.out.println("user : " + user);
+
         if(!user.isEmpty()){
             User tripPawUser = user.get();
             System.out.println("TripPaw User ID: " + tripPawUser.getId());
@@ -50,6 +52,8 @@ public class OAuth2AuthenticationSuccessHandler implements AuthenticationSuccess
             System.out.println("jwt: " + jwt);
 
             response.getWriter().write(jwt);
+        } else {
+            System.out.println("유저 없음");
         }
 
 

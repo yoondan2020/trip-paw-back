@@ -22,7 +22,8 @@ public class UserController {
 
     @GetMapping("/me")
     public Optional<User> findByProviderAndProviderId(Principal principal) {
-        User user = userService.findByName(principal.getName());
+        Long userId = Long.valueOf(principal.getName());
+        User user = userService.findById(userId);
         return userService.findByProviderAndProviderId(user.getProvider(), user.getProviderId());
     }
 }
