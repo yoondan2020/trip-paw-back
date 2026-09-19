@@ -13,8 +13,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name="user")
 @Data
-@Getter
-@Setter
 public class User {
 
     @Id
