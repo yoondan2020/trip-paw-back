@@ -1,7 +1,10 @@
 package com.trippaw.tripplan;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public class TripPlanRepository {
+import java.util.List;
+
+public interface TripPlanRepository extends JpaRepository<TripPlan, Long> {
+
+    List<TripPlan> findByCreatorId(Long creatorId);
 }
