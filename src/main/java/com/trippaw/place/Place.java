@@ -44,8 +44,8 @@ public class Place {
     @Column(name = "thumbnail_url")
     private String thumbnailUrl;
 
-    private int areacode;
-    private int sigungucode;
+    private Integer areacode;
+    private Integer sigungucode;
 
     private double mapx;
     private double mapy;

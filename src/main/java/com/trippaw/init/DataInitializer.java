@@ -18,7 +18,7 @@ public class DataInitializer implements ApplicationRunner  {
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("first");
 
-        placeAPIService.FetchPlace();
+        //placeAPIService.FetchPlace();
 
     }
 }

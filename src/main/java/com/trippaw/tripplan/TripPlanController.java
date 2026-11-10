@@ -21,8 +21,8 @@ public class TripPlanController {
 
     // T-002
     @PostMapping
-    public TripPlan createPlan(@RequestBody TripPlanRequestDTO dto, Principal principal) {
-        return tripPlanService.createPlan(dto, principal);
+    public TripPlan createPlan(@RequestBody TripPlanRequestDTO dto) {
+        return tripPlanService.createPlan(dto);
     }
 
     // T-003
@@ -41,5 +41,11 @@ public class TripPlanController {
     @PatchMapping("/{planId}")
     public TripPlan patchPlan(@PathVariable Long planId, @RequestBody TripPlanRequestDTO dto) {
         return tripPlanService.patchPlan(planId, dto);
+    }
+
+    // T-006
+    @PostMapping("/")
+    public  TripPlan savePlan(@RequestBody TripPlanRequestDTO dto, Principal principal) {
+        return tripPlanService.savePlan(dto, principal);
     }
 }

@@ -8,4 +8,6 @@ import lombok.NoArgsConstructor;
 public class TripPlanRequestDTO {
 
     private String name;
+
+    private int nights;
 }

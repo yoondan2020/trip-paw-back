@@ -34,6 +34,14 @@ public class PlaceService {
         return placeRepository.findByContentTypeId(contentTypeId);
     }
 
+    public Place findRandomByContentTypeId(String contentTypeId) {
+        return placeRepository.findRandomByContentTypeId(contentTypeId);
+    }
+
+    public Place findNearPlaceByContentTypeId(double mapx, double mapy, String contentTypeId, List<Long> visitedPlaceIds) {
+        return placeRepository.findNearPlaceByContentTypeId(mapx, mapy, contentTypeId, visitedPlaceIds);
+    }
+
     public List<Place> findByNearPlace(String mapx, String mapy) {
         return null;
     }
